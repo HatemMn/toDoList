@@ -16,7 +16,7 @@ app.set("view engine", "ejs");
 
 var sess;
 
-app.get('/todolist', function(req,res) {
+app.get('/', function(req,res) {
 
     sess = req.session;
     
@@ -38,7 +38,7 @@ app.post('/ajout', function(req,res) {
         sess.taches.push(req.body.ajout_input);
     }
 
-    return res.redirect('/todolist?ajout_succ=1');
+    return res.redirect('/?ajout_succ=1');
 });
 
 app.post('/supprimer', function(req,res) {
@@ -47,7 +47,7 @@ app.post('/supprimer', function(req,res) {
     if ( !sess.taches ) {
         sess.taches = [];
         var errval = encodeURIComponent('1');
-        return res.redirect('/todolist?supp_err=' + errval);
+        return res.redirect('/?supp_err=' + errval);
     }
     let ch = req.body.suppr_input;
     let index = sess.taches.indexOf(ch);
@@ -56,10 +56,10 @@ app.post('/supprimer', function(req,res) {
     } else {
         // j'envoie une erreur
         var errval = encodeURIComponent('1');
-        return res.redirect('/todolist?supp_err=' + errval);
+        return res.redirect('/?supp_err=' + errval);
     }
 
-    return res.redirect('/todolist');
+    return res.redirect('/');
 });
 
 app.listen(PORT);
