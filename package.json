@@ -1,0 +1,26 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "description": "Une simple ToDoList publique pour ne pas oublier des trucs importants",
+  "main": "todolist2.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "to",
+    "do",
+    "list"
+  ],
+  "author": "Hatem M'naouer",
+  "dependencies": {
+    "body-parser": "*",
+    "cookie-parser": "*",
+    "cookie-session": "*",
+    "ejs": "*",
+    "express": "*",
+    "express-session": "*",
+    "jquery": "*",
+    "markdown": "*"
+  },
+  "license": "ISC"
+}
