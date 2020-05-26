@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>To do list</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+        
+        <script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+        <script type="text/javascript" src="js/bootstrap.js"></script>
+        <script type="text/javascript" src="js/magnific-popup.js"></script>
+
+
+    </head>
+
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="text-center">Voici une todo list publique :D</h1>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid" >
+            <div class="row">
+                <div class="col-lg-3 d-flex justify-content-right flex-column col-sm-12">
+                    <h2 class="text-center">Ajouter une note :</h2>
+                    <br>
+                    <form action="/ajout" method="post">
+                        <div class="form-group">
+                            <label for="ajout_input">Tapez la note ici</label>
+                            <textarea name="ajout_input" class="form-control"></textarea>
+                        </div>
+                     
+                        <button type="submit" class="btn btn-primary">Ajouter !</button>    
+                    </form>
+                </div>
+                <div class="col-6 justify-content-center border border-primary col-sm12">
+                    <ul>
+                        <% var out = "";
+                        console.log(arr);
+                        for (var i = 0; i < arr.length; i++ ) {
+                            out+= "<li>"+arr[i]+"</li>";
+                        }
+                        %>
+                        <%- out %> 
+                    </ul>
+                </div>
+                <div class="col-lg-3 d-flex justify-content-right flex-column col-sm-12">
+                    <form action="/supprimer" method="post">
+                        <h2 class="text-center">Supprimer une note :</h2>
+                        <br>
+                        <div class="form-group">
+                            <label for="suppr_input">Copier coller le contenu de la note ici</label>
+                            <textarea name="suppr_input" class="form-control" id="exampleFormControlTextarea1" ></textarea>
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-primary">Supprimer !</button>    
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <script type="text/javascript">
+            $(document).ready( function()  {
+                var ajout = $("#ajout_input").val();
+                var ajout = $("#suppr_input").val();
+            });
+        </script>
+    </body>
+</html>

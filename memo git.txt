@@ -1,0 +1,19 @@
+git init
+Git status
+Touch somefile.txt
+Git add lol.txt
+Git add --all
+Git commit -m  ‘’some message’’
+Touch .gitignore : list of to be ignored files
+Git log –oneline
+Git checkout ID filename : donne un ancien fichier
+Git reset ID : supprime l'historique
+Git reset ID --hard : reviens au passé ( supprimer tt en route )
+git reset HEAD^ : reviens 1 cran en arrière
+git revert id : redonne les modifs du commit id sans changer les autres tout en commitant
+
+_________
+Branches :
+git branch unNom : crée une nouvelle branche
+git branch -d UnNom : supprime une branche
+git checkout nomBranche : move to the branch
