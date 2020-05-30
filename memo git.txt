@@ -12,8 +12,51 @@ Git reset ID --hard : reviens au passé ( supprimer tt en route )
 git reset HEAD^ : reviens 1 cran en arrière
 git revert id : redonne les modifs du commit id sans changer les autres tout en commitant
 
+
+__________
+Le rebase :
+
+git rebase -i HEAD~n : ouvre vi avec un pick des n derniers commit a partir du HEAD
+	Commandes du rebase interactif vi :
+		pick : inclus le commit
+		reword : renomme le commit
+		edit : édite le commit
+		squash : fusionne avec le commit au dessus
+		fixup : squash mais sans modifier le message
+
+	Raccourcis vi :
+		dd : cut line
+		p : paste line
+		i : insert
+		:wq  : write and quit
+		:q!  : quit without doing nothing
+
+
+__________
+Le stash :
+
+git stash : sauvegarde mes modifs et reprends le projet au dernier commit
+git stash apply : remet les modifications enregistrées au stash 
+git stash drop : supprime les données du stash
+git stash save leNom : enregistre le stash avec un nom
+git stash list : liste tous les stash que je fais
 _________
 Branches :
 git branch unNom : crée une nouvelle branche
 git branch -d UnNom : supprime une branche
 git checkout nomBranche : move to the branch
+
+_______
+Remote :
+git remote -v : lists all remote branches
+git remote "address" remName : adds the remote of the address with the name remName
+git push remName branchName : pushes the selected branch into remName
+git pull remName branchName : récupère les modif de la branche remote
+
+______
+Gitflow :
+http://danielkummer.github.io/git-flow-cheatsheet/index.fr_FR.html#
+
+______
+Hooks :
+a voir 

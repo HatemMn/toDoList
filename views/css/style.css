@@ -1,0 +1,38 @@
+.box {
+    background-color: white;
+    border-width: 3px !important;
+    padding: 10pt;
+}
+.box-red {
+    border-color: #dc3545 !important;
+}
+.box-green {
+    border-color: green !important;
+}
+.box-blue {
+  /*  border-color: blue !important; 
+  box-shadow: 2px 2px 3px -2px rgb(220, 53, 69); */
+}
+body {
+    background-image: url('../img/prism.png');
+}
+.wrapper {
+    min-height: calc(98vh - 50px);
+    margin-bottom: 2vh;
+}
+footer {
+    margin: 25px 0px 0px 0px;
+    padding: 0px;
+    height: 25px;
+}
+.hide {
+    display: hidden;
+}
+.underline {
+    text-decoration: underline;
+}
+@media (max-width: 768px) {
+    .lol {
+        margin-bottom: 10px;
+    }
+}

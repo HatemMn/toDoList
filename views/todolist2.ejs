@@ -17,54 +17,70 @@
     </head>
 
     <body>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12">
-                    <h1 class="text-center">Voici une todo list publique :D</h1>
+        <div class="wrapper" >
+            <br>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <h1 class="text-center text-white">Voici une todo list publique :D</h1>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="container" >
+                <div class="row justify-content-center">
+                    <div class="col-md-12 col-12 align-self-center border border-primary box box-blue">
+                        <ul>
+                            <% var out = "";
+                            console.log(arr);
+                            for (var i = 0; i < arr.length; i++ ) {
+                                out+= "<li>"+arr[i]+"</li>";
+                            }
+                            %>
+                            <%- out %> 
+                        </ul>
+                    </div>
+                </div>
+                <br>
+                <div class="row justify-content-center">               
+                    <div class="lol col-md-4 col-12 border rounded box box-green">
+                        <h2 class="text-center">Ajouter une note :</h2>
+                        <br>
+                        <form action="/ajout" method="post">
+                            <div class="form-group">
+                                <label for="ajout_input">Tapez la note ici</label>
+                                <textarea name="ajout_input" class="form-control"></textarea>
+                            </div>
+                        
+                            <button type="submit" class="btn btn-success">Ajouter !</button>    
+                        </form>
+                    </div>
+                    
+                    <div class="col-md-4 col-12 offset-md-1 border rounded box box-red">
+                        <form action="/supprimer" method="post">
+                            <h2 class="text-center">Supprimer une note :</h2>
+                            <br>
+                            <div class="form-group">
+                                <label for="suppr_input">Copier coller le contenu de la note ici</label>
+                                <textarea name="suppr_input" class="form-control" id="exampleFormControlTextarea1" ></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-danger">Supprimer !</button>    
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="container-fluid" >
-            <div class="row">
-                <div class="col-lg-3 d-flex justify-content-right flex-column col-sm-12">
-                    <h2 class="text-center">Ajouter une note :</h2>
-                    <br>
-                    <form action="/ajout" method="post">
-                        <div class="form-group">
-                            <label for="ajout_input">Tapez la note ici</label>
-                            <textarea name="ajout_input" class="form-control"></textarea>
-                        </div>
-                     
-                        <button type="submit" class="btn btn-primary">Ajouter !</button>    
-                    </form>
-                </div>
-                <div class="col-6 justify-content-center border border-primary col-sm12">
-                    <ul>
-                        <% var out = "";
-                        console.log(arr);
-                        for (var i = 0; i < arr.length; i++ ) {
-                            out+= "<li>"+arr[i]+"</li>";
-                        }
-                        %>
-                        <%- out %> 
-                    </ul>
-                </div>
-                <div class="col-lg-3 d-flex justify-content-right flex-column col-sm-12">
-                    <form action="/supprimer" method="post">
-                        <h2 class="text-center">Supprimer une note :</h2>
-                        <br>
-                        <div class="form-group">
-                            <label for="suppr_input">Copier coller le contenu de la note ici</label>
-                            <textarea name="suppr_input" class="form-control" id="exampleFormControlTextarea1" ></textarea>
-                        </div>
-                        <br>
-                        <button type="submit" class="btn btn-primary">Supprimer !</button>    
-                    </form>
-                </div>
-            </div>
-        </div>
+        
 
+        <!-- Footer -->
+        <footer class="text-center">
+            <p class="text-white">© 2020 - <a href="mnaouer.tn" class="underline text-white">Hatem M'naouer</a></p>
+        </footer>
 
+        <!-- Footer -->
+
+        
         <script type="text/javascript">
             $(document).ready( function()  {
                 var ajout = $("#ajout_input").val();
